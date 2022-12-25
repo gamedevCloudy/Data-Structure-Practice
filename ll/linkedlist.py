@@ -52,23 +52,32 @@ class CreateLinkedList(object):
 
     
 
-def Main(): 
-    print("\nCreate a new linked list: ")
-    x = input("Enter first element: ")
-    y = CreateLinkedList(5)
-    y.Insert(x)
+# def Main(): 
+#     print("\nCreate a new linked list: ")
+#     x = input("Enter first element: ")
+#     y = CreateLinkedList(5)
+#     y.Insert(x)
 
-    z = input("\n How many more elements do you want to add: ")
-    for i in z:
-        m = input("\n Next Element: ")
-        y.InsertNext(m)
+#     z = input("\n How many more elements do you want to add: ")
+#     for i in z:
+#         m = input("\n Next Element: ")
+#         y.InsertNext(m)
 
-    print("\nPrinting entire list: ") 
-    y.PrintList()
+#     print("\nPrinting entire list: ") 
+#     y.PrintList()
 
-Main()
+# Main()
 
 
+
+y = CreateLinkedList(Node(4))
+y.Insert(1)
+y.InsertNext(2)
+y.InsertNext(3)
+y.InsertNext(5)
+y.InsertNext(7)
+
+y.PrintList()
 
 
              
