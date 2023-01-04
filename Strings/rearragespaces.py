@@ -1,16 +1,17 @@
 s = " practice   makes   perfect"
-# t= []
-# for i in range(len(s)):
-#     if not 95<ord(s[i])<123: t.append(s[i])
-# s =s.split()
-# spacesToAdd = len(t)//len(s)
-# x= len(t)-2
-# for i in range(len(s)):
-#     if i%2 !=0: s.insert(i,"  ")
+def rearrageSpaces(): 
+    t= []
+    for i in range(len(s)):
+        if not 95<ord(s[i])<123: t.append(s[i])
+    s =s.split()
+    spacesToAdd = len(t)//len(s)
+    x= len(t)-2
+    for i in range(len(s)):
+        if i%2 !=0: s.insert(i,"  ")
 
-# print(s)
-# print(len(t))
-# print(spacesToAdd)
+    print(s)
+    print(len(t))
+    print(spacesToAdd)
 
 
 def rearSpace(s):
