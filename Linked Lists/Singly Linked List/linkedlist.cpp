@@ -25,6 +25,27 @@ class LinkedList
                 current=head;
             }
 
+            bool isEmpty()
+            {
+                if(head==NULL && head->next==NULL)
+                {
+                    return true; 
+                }
+                return false;
+            }
+
+            int FrontPeek()
+            {
+                if(isEmpty) return NULL; 
+                return head->val;
+            }
+            
+            int BackPeek()
+            {
+                if(isEmpty) return NULL; 
+                return current->val;
+            }
+            
             void AddNode(int val)
             {
                 Node* temp = new Node(); //do not forget to initialize this with new!!!
@@ -62,6 +83,11 @@ class LinkedList
                 if(before==target)
                 {
                     head=after;
+                }
+                else if(target==current)
+                {
+                    current=before;
+                    current->next=NULL; 
                 }
                 else{
                     before->next=after; 
