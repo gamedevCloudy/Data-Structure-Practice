@@ -33,7 +33,7 @@ class Stack
                 Node* temp = new Node();
                 temp->val=value;
 
-                if(top==NULL)
+                if(isEmpty())
                 {
                     top=temp;
                     base=top;
@@ -51,37 +51,45 @@ class Stack
 
             void Pop()
             {
-                if(height==0)
+                if(isEmpty())
                 {
-                    cerr<<"NOT PRESENT!"<<endl;
+                    cerr<<"\nSTACK IS EMPTY"<<endl;
                     return;
-                }
-                if(height==1)
-                {
-                    cout<<"1H"<<endl;
-                    base=top=NULL;
-                    return;
-                }
-                else if(height==2)
-                {
-                    return;
-                    top=top->prev;
-
                 }
                 else{
-                    Node*temp=top;
-                    base=base->prev;
-                    top=top->prev;
-                    delete temp;
+                    if(height==1)
+                    {
+                        Node*b=base;
+                        Node*t=top;
+                        top=base=new Node();
+                    }
+                    else{
+
+                        Node*temp=top;
+                        if(base->prev!=NULL)
+                            base=base->prev;
+                        if(top->prev !=NULL)
+                        {
+                            top=top->prev;
+                            delete temp;
+                        }
+                        
+                    }
                 }
-                cout<<"TOP: "<<top->val<<"\t"<<"BASE: "<<base->val<<"\tHEIGHT: "<<height<<endl;
 
                 height--;
+                cout<<"TOP: "<<top->val<<"\t"<<"BASE: "<<base->val<<"\tHEIGHT: "<<height<<endl;
             }
 
             int PeekTop()
             {
                 return top->val;
+            }
+
+            bool isEmpty()
+            {
+                if(height==0) return true;
+                return false;
             }
 
 
@@ -101,6 +109,9 @@ int main()
     st.Pop();
     cout<<st.PeekTop()<<endl;
     st.Pop();
+    st.Pop();
+    cout<<st.PeekTop()<<endl;
+    st.Push(7);
     cout<<st.PeekTop()<<endl;
     
 
