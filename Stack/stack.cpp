@@ -59,9 +59,10 @@ class Stack
                 else{
                     if(height==1)
                     {
-                        Node*b=base;
-                        Node*t=top;
+                        Node*t=base;
+
                         top=base=new Node();
+                        delete t;
                     }
                     else{
 
@@ -78,11 +79,15 @@ class Stack
                 }
 
                 height--;
-                cout<<"TOP: "<<top->val<<"\t"<<"BASE: "<<base->val<<"\tHEIGHT: "<<height<<endl;
+                cout<<"After REMOVAL: TOP: "<<top->val<<"\t"<<"BASE: "<<base->val<<"\tHEIGHT: "<<height<<endl;
             }
 
             int PeekTop()
             {
+                if(isEmpty()) {
+                    cerr<<"EMPTY"<<endl;
+                    return -1;
+                }
                 return top->val;
             }
 
